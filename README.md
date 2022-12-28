@@ -4,9 +4,9 @@ Easy to create showcase new feature for mobile app android/ios
 
 ## Youtube Link
 
-[![Watch the video](https://img.youtube.com/vi/x7-G2FV7sBU/sddefault.jpg)](https://youtu.be/x7-G2FV7sBU)
+[![Watch the video](https://img.youtube.com/vi/osYwc9Ofo-0/sddefault.jpg)](https://youtu.be/osYwc9Ofo-0)
 
-https://youtu.be/x7-G2FV7sBU
+https://youtu.be/osYwc9Ofo-0
 
 ## Playlist Flutter Intensive Club
 
