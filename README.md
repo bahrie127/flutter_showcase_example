@@ -24,6 +24,33 @@ https://miro.com/app/board/uXjVPKAz1i4=/?share_link_id=218530192751 (https://mir
 |--------------|----------------|
 | <img src="1.png" width="300"/> | <img src="2.png" width="300"/>      |
 
+## Changes Icon & Label Apps
+* https://pub.dev/packages/flutter_launcher_icons
+* https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html
+
+pubspec.yml
+```
+dependencies:
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  flutter_launcher_icons: ^0.11.0
+  showcaseview: ^2.0.0+1
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/book.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+```  
+
+
+
 
 ## Contact:
 * Consultation Flutter and Endorse https://t.me/bahri_bhe
