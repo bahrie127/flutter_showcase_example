@@ -72,14 +72,14 @@ class _MailPageState extends State<MailPage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback(
-      (_) => ShowCaseWidget.of(context).startShowCase([
-        _one,
-        _two,
-        _three,
-        _four,
-      ]),
-    );
+    // WidgetsBinding.instance.addPostFrameCallback(
+    //   (_) => ShowCaseWidget.of(context).startShowCase([
+    //     _one,
+    //     _two,
+    //     _three,
+    //     _four,
+    //   ]),
+    // );
     mails = [
       Mail(
         sender: 'Medium',
@@ -260,26 +260,58 @@ class _MailPageState extends State<MailPage> {
               height: 8,
             ),
             Expanded(
-              child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                itemCount: mails.length,
-                itemBuilder: (context, index) {
-                  if (index == 0) {
-                    return Showcase(
-                        key: _three,
-                        description: 'Tap to check mail',
-                        child: ListTile(
-                          title: Text(mails[index].sub),
-                          subtitle: Text(mails[index].msg),
-                        ));
-                  }
-                  return ListTile(
-                    title: Text(mails[index].sub),
-                    subtitle: Text(mails[index].msg),
-                  );
-                },
-              ),
-            ),
+                child: DataTable(
+              columns: const [
+                DataColumn(
+                    label: Text(
+                  'Sender',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
+                DataColumn(
+                    label: Text(
+                  'Title',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
+                DataColumn(
+                    label: Text(
+                  'Data',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
+              ],
+              rows: mails.map((e) {
+                return DataRow(cells: [
+                  DataCell(Text(e.sender)),
+                  DataCell(Text(e.sub)),
+                  DataCell(Text(e.date)),
+                ]);
+              }).toList(),
+            )
+                // ListView.builder(
+                //   physics: const BouncingScrollPhysics(),
+                //   itemCount: mails.length,
+                //   itemBuilder: (context, index) {
+                //     if (index == 0) {
+                //       return Showcase(
+                //           key: _three,
+                //           description: 'Tap to check mail',
+                //           child: ListTile(
+                //             title: Text(mails[index].sub),
+                //             subtitle: Text(mails[index].msg),
+                //           ));
+                //     }
+                //     return ListTile(
+                //       title: Text(mails[index].sub),
+                //       subtitle: Text(mails[index].msg),
+                //     );
+                //   },
+                // ),
+                ),
           ],
         ),
       ),
